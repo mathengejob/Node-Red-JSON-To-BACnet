@@ -1,0 +1,2482 @@
+[
+    {
+        "id": "689ccfb4b1ccdd10",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e96bb2e41538877e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "73b9bbf3f3a2948f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4f05870146e407eb",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.10.250",
+        "port": "102",
+        "rack": "0",
+        "slot": "2",
+        "localtsaphi": "02",
+        "localtsaplo": "00",
+        "remotetsaphi": "02",
+        "remotetsaplo": "00",
+        "connmode": "tsap",
+        "adapter": "",
+        "busaddr": "2",
+        "cycletime": "500",
+        "timeout": "1500",
+        "name": "Logo PLC",
+        "vartable": [
+            {
+                "addr": "Q0.0",
+                "name": "Output_0"
+            },
+            {
+                "addr": "Q0.1",
+                "name": "Output_1"
+            },
+            {
+                "addr": "Q0.2",
+                "name": "Output_2"
+            },
+            {
+                "addr": "Q0.3",
+                "name": "Output_3"
+            },
+            {
+                "addr": "DB1,WORD1262",
+                "name": "Input_1"
+            },
+            {
+                "addr": "DB1,WORD1264",
+                "name": "Input_2"
+            },
+            {
+                "addr": "DB1,WORD1266",
+                "name": "Input_3"
+            },
+            {
+                "addr": "DB1,WORD1268",
+                "name": "Input_4"
+            },
+            {
+                "addr": "DB1,WORD1270",
+                "name": "Input_5"
+            },
+            {
+                "addr": "DB1,WORD1272",
+                "name": "Input_6"
+            },
+            {
+                "addr": "DB1,WORD1274",
+                "name": "Input_7"
+            },
+            {
+                "addr": "DB1,WORD1276",
+                "name": "Input_8"
+            },
+            {
+                "addr": "DB1,WORD1278",
+                "name": "Input_9"
+            },
+            {
+                "addr": "DB1,WORD1280",
+                "name": "Input_10"
+            },
+            {
+                "addr": "DB1,WORD1282",
+                "name": "Input_11"
+            },
+            {
+                "addr": "DB1,WORD1284",
+                "name": "Input_12"
+            },
+            {
+                "addr": "DB1,WORD1284",
+                "name": "Input_13"
+            },
+            {
+                "addr": "DB1,WORD1286",
+                "name": "Input_14"
+            },
+            {
+                "addr": "DB1,WORD1288",
+                "name": "Input_15"
+            },
+            {
+                "addr": "DB1,WORD1290",
+                "name": "Input_16"
+            },
+            {
+                "addr": "DB1,WORD1292",
+                "name": "Input_17"
+            },
+            {
+                "addr": "DB1,WORD1294",
+                "name": "Input_18"
+            },
+            {
+                "addr": "DB1,WORD1296",
+                "name": "Input_19"
+            },
+            {
+                "addr": "DB1,WORD1298",
+                "name": "Input_20"
+            }
+        ]
+    },
+    {
+        "id": "1bfbc7d96c23d6e7",
+        "type": "config-log",
+        "logname": "rdlog",
+        "logdir": "/home/rd",
+        "stamp": "local",
+        "logstyle": "plain",
+        "logrotate": false,
+        "logcompress": false,
+        "logrotatecount": "5",
+        "logsize": "1000"
+    },
+    {
+        "id": "0954dcdbb5ed51f8",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "true",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 430,
+        "y": 40,
+        "wires": [
+            [
+                "82dd77734fbd0956"
+            ]
+        ]
+    },
+    {
+        "id": "81a16dc0de23c901",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "false",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "82dd77734fbd0956"
+            ]
+        ]
+    },
+    {
+        "id": "5b4f9e0d1b598bd9",
+        "type": "debug",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a66826af4ca963af",
+        "type": "http request",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://192.168.10.182:5000/api/ch",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "88c0910e3a54e678",
+                "fdb3a6ebbbc3365e",
+                "10925ee70623449d",
+                "4f0d5ddf9feed2e6",
+                "1a0b53b7bec7c1a9",
+                "0e2973cd19479de0",
+                "73903e0696bd71b4",
+                "53bbf8b48961198a",
+                "8b3e3ecb0c9f6984",
+                "84bb22573b59d8d6",
+                "5b4f9e0d1b598bd9"
+            ]
+        ]
+    },
+    {
+        "id": "8a54cdabb0c1e09a",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "Make request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "a66826af4ca963af"
+            ]
+        ]
+    },
+    {
+        "id": "88c0910e3a54e678",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "temp = msg.payload.temperature\nmsg.payload = temp\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "1d5a0eda68a832e4"
+            ]
+        ]
+    },
+    {
+        "id": "1d5a0eda68a832e4",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperature_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a88b5699b238e343",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Temperature Sensor_status",
+        "payload": "tempSensor_status_a",
+        "payloadType": "flow",
+        "x": 1100,
+        "y": 240,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "419c8edfa6cba9d3",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "10925ee70623449d",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "c1value = msg.payload.c1value\nmsg.payload = c1value\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "6b9b3be20ee5bba4"
+            ]
+        ]
+    },
+    {
+        "id": "6b9b3be20ee5bba4",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_value_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f0d5ddf9feed2e6",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1setpoint = msg.payload.c1setpoint\nmsg.payload = c1setpoint\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "8a6d84c4a12d332e"
+            ]
+        ]
+    },
+    {
+        "id": "8a6d84c4a12d332e",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_setPoint_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0e2973cd19479de0",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var flow = msg.payload.flow\nmsg.payload = flow\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "085ab9795e9e0e3a"
+            ]
+        ]
+    },
+    {
+        "id": "085ab9795e9e0e3a",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "flow_status_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a0b53b7bec7c1a9",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1rawvalue = msg.payload.c1rawvalue\nmsg.payload = c1rawvalue\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "77c8196bcc183c1a"
+            ]
+        ]
+    },
+    {
+        "id": "77c8196bcc183c1a",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_rawValue_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fdb3a6ebbbc3365e",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var tempsensqual = msg.payload.tempsensqual\nmsg.payload = tempsensqual\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "84da9212a8e90719"
+            ]
+        ]
+    },
+    {
+        "id": "84da9212a8e90719",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tempSensor_status_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73903e0696bd71b4",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1warnhigh = msg.payload.c1warnhigh\nmsg.payload = c1warnhigh\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "b06c0be2702b9262"
+            ]
+        ]
+    },
+    {
+        "id": "b06c0be2702b9262",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_warnHigh_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53bbf8b48961198a",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1warnlow = msg.payload.c1warnlow\nmsg.payload = c1warnlow\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 600,
+        "wires": [
+            [
+                "df64bb55c0aa8c1a"
+            ]
+        ]
+    },
+    {
+        "id": "df64bb55c0aa8c1a",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_warnLow_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84bb22573b59d8d6",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1alarmlow = msg.payload.c1alarmlow\nmsg.payload = c1alarmlow\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 720,
+        "wires": [
+            [
+                "1971cb6a15a79cb3"
+            ]
+        ]
+    },
+    {
+        "id": "1971cb6a15a79cb3",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_alarmLow_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b3e3ecb0c9f6984",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1alarmhigh = msg.payload.c1alarmhigh\nmsg.payload = c1alarmhigh\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 660,
+        "wires": [
+            [
+                "d64fbff402426f61"
+            ]
+        ]
+    },
+    {
+        "id": "d64fbff402426f61",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_alarmHigh_a",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f14ec63490ab26c",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Temperature",
+        "payload": "temperature_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 180,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "bff5e1b8c9f4ccce",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "7c4dc5bd138ce2d0",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_value",
+        "payload": "PH_value_a",
+        "payloadType": "flow",
+        "x": 1070,
+        "y": 300,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "b06177b3c8a749e1",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "62607649cb6189b4",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_setPoint",
+        "payload": "PH_setPoint_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 360,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "6d2abb4693d2e5d2",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "aad1a79a6ca219d4",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "flow_status",
+        "payload": "flow_status_a",
+        "payloadType": "flow",
+        "x": 1070,
+        "y": 480,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "3125f713c38d2a3d",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "d93f59b7cfd24480",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_warnHigh",
+        "payload": "PH_warnHigh_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 540,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "a79e5a47827fe0fd",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "800724e7edf2c6b5",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_warnLow",
+        "payload": "PH_warnLow_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 600,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "2b0d3a3780a91846",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "cd2afc1862d874e0",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_alarmHigh",
+        "payload": "PH_alarmHigh_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 660,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "6ca5e642683f7a60",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "5c4f83550ce3ec58",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_alarmLow",
+        "payload": "PH_alarmLow_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 720,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9",
+                "81b18fc59946dfac",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "bff5e1b8c9f4ccce",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 180,
+        "wires": [
+            [
+                "1341ae1b44cc45e6"
+            ]
+        ]
+    },
+    {
+        "id": "419c8edfa6cba9d3",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 240,
+        "wires": [
+            [
+                "55185530649b84e8"
+            ]
+        ]
+    },
+    {
+        "id": "b06177b3c8a749e1",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 300,
+        "wires": [
+            [
+                "f69ae84153db9c79"
+            ]
+        ]
+    },
+    {
+        "id": "6d2abb4693d2e5d2",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 360,
+        "wires": [
+            [
+                "0aeff5dbb682182e"
+            ]
+        ]
+    },
+    {
+        "id": "3125f713c38d2a3d",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 480,
+        "wires": [
+            [
+                "14df997a412abfee"
+            ]
+        ]
+    },
+    {
+        "id": "a79e5a47827fe0fd",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 540,
+        "wires": [
+            [
+                "6af9d8f10e764370"
+            ]
+        ]
+    },
+    {
+        "id": "2b0d3a3780a91846",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 600,
+        "wires": [
+            [
+                "ecb8581522c3298e"
+            ]
+        ]
+    },
+    {
+        "id": "6ca5e642683f7a60",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 660,
+        "wires": [
+            [
+                "df2662da91c216e2"
+            ]
+        ]
+    },
+    {
+        "id": "81b18fc59946dfac",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 720,
+        "wires": [
+            [
+                "cd585ecb9a3778b1"
+            ]
+        ]
+    },
+    {
+        "id": "306a176a7eee8641",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_rawValue",
+        "payload": "PH_rawValue_a",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 420,
+        "wires": [
+            [
+                "2cf88ad81a18f620",
+                "5b4f9e0d1b598bd9",
+                "e3a66e298da39b05"
+            ]
+        ]
+    },
+    {
+        "id": "2cf88ad81a18f620",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval =0-(Math.round(val));\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 420,
+        "wires": [
+            [
+                "eb39bab4b5c6cd61"
+            ]
+        ]
+    },
+    {
+        "id": "a32667f4ffbf47c1",
+        "type": "s7 in",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "mode": "single",
+        "variable": "Output_0",
+        "diff": true,
+        "name": "",
+        "x": 800,
+        "y": 120,
+        "wires": [
+            [
+                "5b4f9e0d1b598bd9"
+            ]
+        ]
+    },
+    {
+        "id": "82dd77734fbd0956",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Output_0",
+        "name": "Output_0",
+        "x": 800,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1341ae1b44cc45e6",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_1",
+        "name": "NA1 Flag",
+        "x": 1560,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "55185530649b84e8",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_2",
+        "name": "NA2Flag",
+        "x": 1560,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f69ae84153db9c79",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_3",
+        "name": "NA3Flag",
+        "x": 1560,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0aeff5dbb682182e",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_4",
+        "name": "NA4Flag",
+        "x": 1560,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "eb39bab4b5c6cd61",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_5",
+        "name": "NA5Flag",
+        "x": 1560,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "14df997a412abfee",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_6",
+        "name": "NA6Flag",
+        "x": 1560,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6af9d8f10e764370",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_7",
+        "name": "NA7Flag",
+        "x": 1560,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "ecb8581522c3298e",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_8",
+        "name": "NA8Flag",
+        "x": 1560,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "df2662da91c216e2",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_9",
+        "name": "NA9Flag",
+        "x": 1560,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cd585ecb9a3778b1",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_10",
+        "name": "NA10Flag",
+        "x": 1560,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "e3a66e298da39b05",
+        "type": "flogger",
+        "z": "73b9bbf3f3a2948f",
+        "name": "Logger to syslog",
+        "logfile": "rdlog1",
+        "inputchoice": "fullmsg",
+        "inputobject": "payload",
+        "inputobjectType": "msg",
+        "inputmoustache": "Recieved payload {{payload}} and topic {{topic}}",
+        "loglevel": "INFO",
+        "logconfig": "1bfbc7d96c23d6e7",
+        "sendpane": "",
+        "x": 1080,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0ee289f64428f44",
+        "type": "http request",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://192.168.10.182:5200/api/ch",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 210,
+        "y": 800,
+        "wires": [
+            [
+                "e49de29d098e5f61",
+                "0ca0d822c3c4f981",
+                "70bd8c1c9e1c0b5d",
+                "e55b57a908259b03",
+                "49f9630a805226e9",
+                "1cbe08e0cbe9b336",
+                "255cced830fb44b4",
+                "4db04f948754a96b",
+                "f0904a0c0f1a451f",
+                "1785ce3290fa49d1"
+            ]
+        ]
+    },
+    {
+        "id": "f073a5761939422d",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "Make request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 120,
+        "y": 880,
+        "wires": [
+            [
+                "f0ee289f64428f44"
+            ]
+        ]
+    },
+    {
+        "id": "e49de29d098e5f61",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "temp = msg.payload.temperature\nmsg.payload = temp\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 820,
+        "wires": [
+            [
+                "b7872f64dbc701ab"
+            ]
+        ]
+    },
+    {
+        "id": "b7872f64dbc701ab",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperature_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cff46dc44690c892",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Temperature Sensor_status",
+        "payload": "tempSensor_status_b",
+        "payloadType": "flow",
+        "x": 1100,
+        "y": 880,
+        "wires": [
+            [
+                "a52369eb3c9df9fa"
+            ]
+        ]
+    },
+    {
+        "id": "70bd8c1c9e1c0b5d",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "c1value = msg.payload.c1value\nmsg.payload = c1value\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 940,
+        "wires": [
+            [
+                "1309475e29e4ddf1"
+            ]
+        ]
+    },
+    {
+        "id": "1309475e29e4ddf1",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_value_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e55b57a908259b03",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1setpoint = msg.payload.c1setpoint\nmsg.payload = c1setpoint\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1000,
+        "wires": [
+            [
+                "a6cc10f1a0460fe7"
+            ]
+        ]
+    },
+    {
+        "id": "a6cc10f1a0460fe7",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_setPoint_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cbe08e0cbe9b336",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var flow = msg.payload.flow\nmsg.payload = flow\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1120,
+        "wires": [
+            [
+                "ba67691f11244155"
+            ]
+        ]
+    },
+    {
+        "id": "ba67691f11244155",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "flow_status_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49f9630a805226e9",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1rawvalue = msg.payload.c1rawvalue\nmsg.payload = c1rawvalue\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1060,
+        "wires": [
+            [
+                "b53948174ddc849c"
+            ]
+        ]
+    },
+    {
+        "id": "b53948174ddc849c",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_rawValue_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ca0d822c3c4f981",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var tempsensqual = msg.payload.tempsensqual\nmsg.payload = tempsensqual\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 880,
+        "wires": [
+            [
+                "74050e47a95cd938"
+            ]
+        ]
+    },
+    {
+        "id": "74050e47a95cd938",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tempSensor_status_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "255cced830fb44b4",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1warnhigh = msg.payload.c1warnhigh\nmsg.payload = c1warnhigh\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1180,
+        "wires": [
+            [
+                "90a77e0179433f90"
+            ]
+        ]
+    },
+    {
+        "id": "90a77e0179433f90",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_warnHigh_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4db04f948754a96b",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1warnlow = msg.payload.c1warnlow\nmsg.payload = c1warnlow\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1240,
+        "wires": [
+            [
+                "0b20fdbde81d28d5"
+            ]
+        ]
+    },
+    {
+        "id": "0b20fdbde81d28d5",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_warnLow_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1785ce3290fa49d1",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1alarmlow = msg.payload.c1alarmlow\nmsg.payload = c1alarmlow\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1360,
+        "wires": [
+            [
+                "a65541484124a6a7"
+            ]
+        ]
+    },
+    {
+        "id": "a65541484124a6a7",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_alarmLow_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0904a0c0f1a451f",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "var c1alarmhigh = msg.payload.c1alarmhigh\nmsg.payload = c1alarmhigh\nreturn msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1300,
+        "wires": [
+            [
+                "fab2f476cdd6dfec"
+            ]
+        ]
+    },
+    {
+        "id": "fab2f476cdd6dfec",
+        "type": "change",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "PH_alarmHigh_b",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c7c5cfbf2dfda9e",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Temperature",
+        "payload": "temperature_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 820,
+        "wires": [
+            [
+                "8094dbe7165a8922"
+            ]
+        ]
+    },
+    {
+        "id": "df3a1edf3c08d78a",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_value",
+        "payload": "PH_value_b",
+        "payloadType": "flow",
+        "x": 1070,
+        "y": 940,
+        "wires": [
+            [
+                "8e48db3721f3c81d"
+            ]
+        ]
+    },
+    {
+        "id": "0a0e2e406497a549",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_setPoint",
+        "payload": "PH_setPoint_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 1000,
+        "wires": [
+            [
+                "884b293508efc74e"
+            ]
+        ]
+    },
+    {
+        "id": "8cfed8750f7e28ad",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "flow_status",
+        "payload": "flow_status_b",
+        "payloadType": "flow",
+        "x": 1070,
+        "y": 1120,
+        "wires": [
+            [
+                "36ac9960c3d4335b"
+            ]
+        ]
+    },
+    {
+        "id": "d183611790b4e936",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_warnHigh",
+        "payload": "PH_warnHigh_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 1180,
+        "wires": [
+            [
+                "19f1317974181f97"
+            ]
+        ]
+    },
+    {
+        "id": "ffee7cca2792723e",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_warnLow",
+        "payload": "PH_warnLow_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 1240,
+        "wires": [
+            [
+                "b4eb6b95b79eb5db"
+            ]
+        ]
+    },
+    {
+        "id": "35cacca48e59f4bc",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_alarmHigh",
+        "payload": "PH_alarmHigh_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 1300,
+        "wires": [
+            [
+                "a9b69ab1c1ca82ed"
+            ]
+        ]
+    },
+    {
+        "id": "aea939e9c595e296",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_alarmLow",
+        "payload": "PH_alarmLow_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 1360,
+        "wires": [
+            [
+                "d5fc181e394601e5"
+            ]
+        ]
+    },
+    {
+        "id": "8094dbe7165a8922",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 820,
+        "wires": [
+            [
+                "14256e47a670dc75"
+            ]
+        ]
+    },
+    {
+        "id": "a52369eb3c9df9fa",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 880,
+        "wires": [
+            [
+                "45bcb0ed5a0a42c9"
+            ]
+        ]
+    },
+    {
+        "id": "8e48db3721f3c81d",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 940,
+        "wires": [
+            [
+                "0a4ab666572e7092"
+            ]
+        ]
+    },
+    {
+        "id": "884b293508efc74e",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1000,
+        "wires": [
+            [
+                "1c4cf8d8089495eb"
+            ]
+        ]
+    },
+    {
+        "id": "36ac9960c3d4335b",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1120,
+        "wires": [
+            [
+                "5ec7503467194442"
+            ]
+        ]
+    },
+    {
+        "id": "19f1317974181f97",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1180,
+        "wires": [
+            [
+                "b69d1f2e2b7ad463"
+            ]
+        ]
+    },
+    {
+        "id": "b4eb6b95b79eb5db",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1240,
+        "wires": [
+            [
+                "a2b44da981ebe5be"
+            ]
+        ]
+    },
+    {
+        "id": "a9b69ab1c1ca82ed",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1300,
+        "wires": [
+            [
+                "99019f3298374c50"
+            ]
+        ]
+    },
+    {
+        "id": "d5fc181e394601e5",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval = Math.round(val);\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1360,
+        "wires": [
+            [
+                "076d4b46fbc3992c"
+            ]
+        ]
+    },
+    {
+        "id": "0407e75f72ba5e18",
+        "type": "inject",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "PH_rawValue",
+        "payload": "PH_rawValue_b",
+        "payloadType": "flow",
+        "x": 1080,
+        "y": 1060,
+        "wires": [
+            [
+                "c3b912009b6a17e5"
+            ]
+        ]
+    },
+    {
+        "id": "c3b912009b6a17e5",
+        "type": "function",
+        "z": "73b9bbf3f3a2948f",
+        "name": "",
+        "func": "val = Number(msg.payload);\nval =0-(Math.round(val));\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1060,
+        "wires": [
+            [
+                "6e4450afc5b01244"
+            ]
+        ]
+    },
+    {
+        "id": "14256e47a670dc75",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_11",
+        "name": "NA11 Flag",
+        "x": 1570,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "45bcb0ed5a0a42c9",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_12",
+        "name": "NA12Flag",
+        "x": 1560,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "0a4ab666572e7092",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_13",
+        "name": "NA13Flag",
+        "x": 1560,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "1c4cf8d8089495eb",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_14",
+        "name": "NA14Flag",
+        "x": 1560,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "6e4450afc5b01244",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_15",
+        "name": "NA15Flag",
+        "x": 1560,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "5ec7503467194442",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_16",
+        "name": "NA16Flag",
+        "x": 1560,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "b69d1f2e2b7ad463",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_17",
+        "name": "NA17Flag",
+        "x": 1560,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "a2b44da981ebe5be",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_18",
+        "name": "NA18Flag",
+        "x": 1560,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "99019f3298374c50",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_19",
+        "name": "NA19Flag",
+        "x": 1560,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "076d4b46fbc3992c",
+        "type": "s7 out",
+        "z": "73b9bbf3f3a2948f",
+        "endpoint": "4f05870146e407eb",
+        "variable": "Input_20",
+        "name": "NA20Flag",
+        "x": 1560,
+        "y": 1360,
+        "wires": []
+    }
+]
